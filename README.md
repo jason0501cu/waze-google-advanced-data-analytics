@@ -29,6 +29,7 @@ pip install -r requirements.txt
 This project aims to build a machine learning model to predict the churn rate of the Waze app, complemented by an in-depth exploratory data analysis (EDA).
 
 [Project Proposal](01-project-proposal-PACE-workflow/Project-Proposal.pdf)
+
 [PACE workflow document](01-project-proposal-PACE-workflow/PACE-strategy-document.pdf)
 
 If you’d like to view the Jupyter notebooks directly, please click the link below:
