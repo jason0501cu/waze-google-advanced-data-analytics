@@ -87,7 +87,7 @@ waze-google-advanced-data-analytics-project/
 ├── 04-hypothesis-testing
 ├── 05-logistic-regression
 ├── 06-machine-learning-model
-├── charts                                   
+├── charts                                 
 ├── images
 ├── requirements.txt
 └── README.md
@@ -98,10 +98,13 @@ waze-google-advanced-data-analytics-project/
 ## Exploratory Data Analysis Summary
 
 [eda.ipynb](03-EDA/eda.ipynb)
+
 [Executive Summary](03-EDA/eda-executive-summaries.pdf)
+
 Through EDA, we uncovered several strong indicators of churn:
 
 1. **Frequency of Use**
+
    ![Churn Rate Per Driving Day](charts/churn-rate-per-driving-day.png)
 
 - 40% of users with zero usage churned.
@@ -110,14 +113,17 @@ Through EDA, we uncovered several strong indicators of churn:
   The churn rate is highest among users who used Waze infrequently or not at all in the past month. More driving days in the month correlated with lower churn rates.
 
 2. **Distance per Driving Day**
+
    ![Churn Rate by mean km per driving day](charts/churn-km-day.png)
 
 - Higher average km per driving day linked to increased churn risk.
 
 3. **Churn Rate by Device Type**
+
    ![Retention by Device](charts/retention-device.png)
    The  ratio  of  churned  to  retained users  is  similar  across  different device types.
-5. **User Tenure & Distributions**
+
+4. **User Tenure & Distributions**
 
 - Tenure ranged from completely new users to ~10 years on the platform.
 - Most features exhibited right-skewed or uniform distributions.
@@ -126,14 +132,16 @@ Through EDA, we uncovered several strong indicators of churn:
 ### EDA Recommendations
 
 1. Collaborate with product teams to understand long-distance drivers’ behavior.
-3. Conduct deeper statistical analyses on other variables.
+2. Conduct deeper statistical analyses on other variables.
 
 ---
 
 ## Hypothesis Testing Summary
 
 [hypotheses-testing.ipynb](04-hypothesis-testing/hypothesis-testing.ipynb)
+
 [Executive Summary](04-hypothesis-testing/hypothesis-testing-Executive-summaries.pdf)
+
 
 Designed a two-sample t-test to compare average drives between Android and iPhone users:
 
@@ -145,6 +153,7 @@ Designed a two-sample t-test to compare average drives between Android and iPhon
 ## Regression Modeling Summary
 
 [regression-modeling.ipynb](05-logistic-regression/regression-modeling.ipynb)
+
 [Executive Summary](05-logistic-regression/regression-modeling-executive-summary.pdf)
 
 Built and evaluated a binomial logistic regression to predict churn:
@@ -185,10 +194,12 @@ Compared Random Forest vs XGBoost on train/validation/test splits:
     - Although its accuracy is slightly lower, this is acceptable since churn prediction involves an imbalanced dataset.
     - In such cases, recall and F1-score are more important than overall accuracy.
   - Recall improved to ~14% (vs. 9% for logistic regression).
+
 - **Engineered Features Dominate:**
   ![Feature Importances](charts/xgb-features.png)
 
   - Top predictors include `km_per_hour`, `percent_of_drives_to_favorite`, `total_sessions_per_day`, `percent_sessions_in_last_month`, `km_per_driving_day`, `km_per_drive`.
+  
 - **Interpretability Trade-off:**
 
   - Tree ensembles yield better accuracy but are less transparent.
