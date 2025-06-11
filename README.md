@@ -159,11 +159,14 @@ Designed a two-sample t-test to compare average drives between Android and iPhon
 Built and evaluated a binomial logistic regression to predict churn:
 
 - **Performance**
+
   ![Confusion Matrix](charts/confusion_matrix.png)
 
   - Precision: ~52% (positive predictions correct)
   - Recall: ~9% (detected churned users)
+
 - **Feature Insights**
+
   ![Feature Importances](charts/regression-features.png)
 
   - `activity_days` was the strongest predictor (more activity → lower churn).
